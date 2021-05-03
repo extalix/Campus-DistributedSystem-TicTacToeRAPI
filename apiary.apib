@@ -14,7 +14,7 @@ terdapat beberapa buah api yang dapat digunakan untuk memainkan game ini.
 
 ## API Collection [/api]
 
-### Get or Create Room [GET /room/get]
+### Get or Create Room [GET /api/room/get]
 
 + Response 200 (application/json)
 
@@ -23,3 +23,52 @@ terdapat beberapa buah api yang dapat digunakan untuk memainkan game ini.
                 "roomId": 11
             }
         ]
+
+### Get Room Stats [GET /api/room/11]
+
++ Response 200 (application/json)
+    
+        [
+            {
+              "turn": 1,
+              "c1": 0,
+              "c2": 0,
+              "c3": 0,
+              "c4": 0,
+              "c5": 0,
+              "c6": 0,
+              "c7": 0,
+              "c8": 0,
+              "c9": 0
+            }
+        ]
+
+### GET Room Score [GET /api/room/11/score]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "p1": 0,
+                "p2": 0
+            }
+        ]
+
+### Get Opponent [GET /api/room/11/opponent]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "a": "admin",
+                "b": "bawangsambal"
+            }
+        ]
+
+### Game Ending [POST /api/room/11/end]
+
++ Response 200 (application/json)
+
+### Record Move [POST /api/room/11/update]
+
++ Response 200 (application/json)
