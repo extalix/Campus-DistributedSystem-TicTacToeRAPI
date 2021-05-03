@@ -1,0 +1,14 @@
+{% extends 'client/index.html' %}
+
+{% block content %}
+<div class="flex full flexCenter flexCol">
+    <div class="signupBox">
+        <h2>Sign Up</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}

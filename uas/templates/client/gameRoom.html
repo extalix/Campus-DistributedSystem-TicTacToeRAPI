@@ -1,0 +1,33 @@
+{% extends 'client/index.html' %}
+{% load static %}
+
+{% block content %}
+<span id="profileName"><i class="fas left fa-user"></i> {{ username }}</span>
+<a href="/logout" class="btn" id="logoutButton"><i class="fas left fa-power-off"></i>Logout</a>
+
+<div class="full flex flexCenter">
+    <div class="flex flexFill flexCenter flexCol">
+        <img src="{% static 'img/Oplayer.png' %}" alt="O symbol">
+        <span id="player1Name">Player 1</span>
+    </div>
+    <div class="flex flexFill flexCenter flexCol">
+        <div class="full flex flexCenter" id="cellContainer">
+            <div id="c1" class="cell"></div>
+            <div id="c2" class="cell"></div>
+            <div id="c3" class="cell"></div>
+            <div id="c4" class="cell"></div>
+            <div id="c5" class="cell"></div>
+            <div id="c6" class="cell"></div>
+            <div id="c7" class="cell"></div>
+            <div id="c8" class="cell"></div>
+            <div id="c9" class="cell"></div>
+        </div>
+        <span id="status">Searching for opponent</span>
+    </div>
+    <div class="flex flexFill flexCenter flexCol">
+        <img src="{% static 'img/Xplayer.png' %}" alt="X symbol">
+        <span id="player2Name">Player 2</span>
+    </div>
+</div>
+<script src='{% static 'js/gamescript.js' %}'></script>
+{% endblock content %}

@@ -1,0 +1,24 @@
+{% extends 'client/index.html' %}
+
+{% block content %}
+<div class="flex full flexCenter flexCol">
+    <div class="loginBox flex flexCol vCenter hJustify">
+        <h2>Login</h2>
+        <form method="POST" class="full">
+            {% csrf_token %}
+            <div class="flex vCenter">
+                <label for="username" class="flexFill">Username</label>
+                <input type="text" name="username" id="username">
+            </div>
+            <div class="flex vCenter">
+                <label for="Password" class="flexFill">Password</label>
+                <input type="password" name="password" id="password">
+            </div>
+            <div class="flex">
+                <button type="submit" class="flexFill">Login</button>
+            </div>
+        </form>
+        <a href="/signup" class="btn">Create Account</a>
+    </div>
+</div>
+{% endblock content %}
