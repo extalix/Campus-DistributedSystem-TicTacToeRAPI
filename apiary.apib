@@ -5,6 +5,13 @@ HOST: https://127.0.0.1:8000/
 
 Aplikasi ini merupaka sebuah game yang dapat dimainkan bersama teman melalui jaringan komputer. game yang dimaksud adalah game tic tac toe yang mana pada 1 game akan melibatkan 2 orang pemain.
 
+# Cara menyalakan
+Aplikasi ini dibangun menggunakan django. Untuk menyalakan server, buka cmd pada folder uas dan jalankan python manage.py runserver [ip]:[port].
+
+# Mengakses Web Api
+Api yang terdaftar terdapat pada path /api seperti /api/room/get
+terdapat beberapa buah api yang dapat digunakan untuk memainkan game ini.
+
 ## API Collection [/api]
 
 ### Get or Create Room [GET /room/get]
@@ -13,68 +20,8 @@ Aplikasi ini merupaka sebuah game yang dapat dimainkan bersama teman melalui jar
 
         [
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
+                "roomId": 11
             }
         ]
 
 ### Get Room Stats [GET /room/11]
-
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
-
-+ Request (application/json)
-
-        {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
-        }
-
-+ Response 201 (application/json)
-
-    + Headers
-
-            Location: /questions/2
-
-    + Body
-
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
-            }
